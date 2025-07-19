@@ -5,6 +5,10 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MyHello from './MyHello';
 import EventBasic from './EventBasic';
+import StateBasic from './StateBasic';
+// import ForList from './ForList';
+import books from './books';
+import ForNest from './ForNest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
@@ -14,6 +18,9 @@ setInterval(()=>{
       {/* <App /> */}
       <MyHello myName="鈴木" />
       <EventBasic type="time" />
+      <StateBasic init={0} />
+      {/* <ForList src={books} /> */}
+      <ForNest src={books} />
     </React.StrictMode>
   );
 },1000);
