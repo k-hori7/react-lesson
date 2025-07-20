@@ -9,6 +9,9 @@ import StateBasic from './StateBasic';
 // import ForList from './ForList';
 import books from './books';
 import ForNest from './ForNest';
+import ForFilter from './ForFilter';
+import ForSort from './ForSort';
+import SelectStyle from './SelectStyle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 setInterval(()=>{
@@ -21,6 +24,11 @@ setInterval(()=>{
       <StateBasic init={0} />
       {/* <ForList src={books} /> */}
       <ForNest src={books} />
+      <p>ーーーーーー3500円以下ーーーーー</p>
+      <ForFilter src={books} />
+      <p>sort</p>
+      <ForSort src = {books} />
+      <SelectStyle mode='dark' />
     </React.StrictMode>
   );
 },1000);
