@@ -1,0 +1,28 @@
+/* 全体の文字スタイル */
+div {
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  /* 警告時のスタイル */
+  .warn {
+    color: #fff;
+    background-color: #e53935; /* 赤背景 */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    animation: blink 0.8s infinite alternate;
+  }
+  
+  /* 点滅アニメーション */
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+  
