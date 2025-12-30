@@ -22,16 +22,10 @@ type ActionType =
       init: number;
     };
 
-//Reducerの型定義
-type CountReducerType = (
-  state: StateType,
-  action: ActionType
-) => StateType | undefined;
-
 export default function HookReducer({ init }: HookReducerUpProps) {
   //Reducerへの型付け
-  const [state, dispatch] = useReducer<CountReducerType>(
-    (state, action) => {
+  const [state, dispatch] = useReducer(
+    (state: StateType, action: ActionType) => {
       switch (action.type) {
         case "update":
           return { count: state.count + action.step };
@@ -47,7 +41,7 @@ export default function HookReducer({ init }: HookReducerUpProps) {
     }
   );
   const handleClick = () => {
-    dispatch({ type: "update" });
+    dispatch({ type: "update", step: 1 });
   };
   return (
     <>
@@ -56,29 +50,3 @@ export default function HookReducer({ init }: HookReducerUpProps) {
     </>
   );
 }
-
-//HookReducerUp.jsx のコードは以下
-// export default function HookReducer({ init }) {
-//     const [state, dispatch] = useReducer(
-//       (state, action) => {
-//         switch (action.type) {
-//           case 'update':
-//             return { count: state.count + 1 };
-//           default:
-//             return state;
-//         }
-//       },
-//       {
-//         count: init
-//       }
-//     );
-//     const handleClick = () => {
-//       dispatch({ type: 'update' });
-//     };
-//     return (
-//       <>
-//         <button onClick={handleClick}>カウント</button>
-//         <p>{state.count}回、クリックされました。</p>
-//       </>
-//     );
-//   }

@@ -2,6 +2,7 @@ import StyledPanel from "./StyledPanel";
 import "./App.css";
 import ListTemplate from "./ListTemplate";
 import { Book } from "./Book";
+import HookReducer from "./HookReducerUp";
 
 function App() {
   let msg: string = "test";
@@ -78,6 +79,8 @@ function App() {
           </>
         )}
       </ListTemplate>
+
+      <HookReducer init={1}></HookReducer>
     </>
   );
 }
